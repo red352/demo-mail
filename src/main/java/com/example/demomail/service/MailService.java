@@ -140,7 +140,7 @@ public class MailService {
                     ContentType contentType = new ContentType(bodyPart.getContentType());
                     if (contentType.getPrimaryType().equalsIgnoreCase("text")) {
                         try (var inputStream = new BufferedInputStream(bodyPart.getInputStream())) {
-                            var buffer = new byte[4096]; // 缓冲区大小
+                            var buffer = new byte[8192]; // 缓冲区大小
                             int bytesRead;
                             while ((bytesRead = inputStream.read(buffer)) != -1) {
                                 String string = new String(buffer, 0, bytesRead, StandardCharsets.UTF_8);
