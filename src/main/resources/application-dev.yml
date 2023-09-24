@@ -1,0 +1,21 @@
+spring:
+  mail:
+    host: smtp.gmail.com
+    username: shuffling36@gmail.com
+    password: ${gmail_key}
+    port: 587
+    properties:
+      mail:
+        store:
+          protocol: imap
+        imap:
+          host: imap.gmail.com
+          port: 993
+          ssl:
+            enable: true
+          usesocketchannels: true
+        smtp:
+          auth: true
+logging:
+  level:
+    com.example.demomail.service.MailService: debug
